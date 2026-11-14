@@ -1,0 +1,24 @@
+:root{--bg:#09090b;--panel:#111114;--line:#27272a;--accent:#67e8f9;--accent2:#a78bfa}
+body{background:radial-gradient(900px 500px at 85% -10%,rgba(167,139,250,.12),transparent),var(--bg);font-family:'IBM Plex Sans',system-ui,sans-serif}
+code,pre,.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:.75rem;padding:1.25rem;transition:border-color .2s,box-shadow .2s}
+.card:focus-within{border-color:rgba(103,232,249,.5);box-shadow:0 0 0 1px rgba(103,232,249,.25),0 0 24px -6px rgba(103,232,249,.35)}
+.inp{width:100%;background:#0c0c0f;border:1px solid var(--line);border-radius:.5rem;padding:.5rem .75rem;color:#e4e4e7;font-size:.875rem}
+.inp:focus{outline:2px solid var(--accent);outline-offset:1px}
+.btn{background:var(--accent);color:#082f35;font-weight:600;font-size:.875rem;padding:.5rem .9rem;border-radius:.5rem;transition:filter .15s}
+.btn:hover{filter:brightness(1.1)} .btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.btn.ghost{background:transparent;color:#d4d4d8;border:1px solid var(--line)}
+.btn.danger{background:#f87171;color:#2a0a0a}
+.out{background:#0c0c0f;border:1px solid var(--line);border-radius:.5rem;padding:.75rem;font-size:.8rem;min-height:3rem;white-space:pre-wrap;overflow-x:auto;color:#a1a1aa}
+.out.ok{color:#d1fae5}.out.err{color:#f87171}
+.tab{padding:.5rem .85rem;border-radius:.5rem;font-size:.875rem;color:#a1a1aa;text-align:left;width:100%}
+.tab:hover{color:#fff;background:#18181b}.tab.active{color:#fff;background:#18181b;box-shadow:inset 2px 0 var(--accent)}
+.sub{padding:.4rem .8rem;border-bottom:2px solid transparent;color:#a1a1aa;font-size:.875rem;white-space:nowrap}
+.sub.active{color:#fff;border-color:var(--accent)}
+.badge{border:1px solid var(--line);border-radius:999px;padding:.15rem .7rem;font-size:.75rem;color:#d4d4d8}
+.lbl{font-size:.75rem;color:#a1a1aa;margin-bottom:.25rem;display:block}
+table{width:100%;font-size:.85rem;border-collapse:collapse}
+th{text-align:left;color:#a1a1aa;font-weight:500;padding:.4rem .5rem;border-bottom:1px solid var(--line)}
+td{padding:.4rem .5rem;border-bottom:1px solid #1c1c1f}
+.panel{animation:in .18s ease-out}@keyframes in{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.panel{animation:none}}
