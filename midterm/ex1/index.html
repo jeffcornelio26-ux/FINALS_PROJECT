@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SeptaCode Team - Meet Our Team</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-accent: #e06d53;
+      --primary-hover: #c85a42;
+      --bg-dark-slate: #0f172a;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system,
+        BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+
+      background-image:
+        radial-gradient(
+          var(--primary-accent) 0.6px,
+          transparent 0.6px
+        ),
+        linear-gradient(
+          135deg,
+          #f1f5f9 0%,
+          #e2e8f0 100%
+        );
+
+      background-size: 24px 24px, 100% 100%;
+      background-attachment: fixed;
+
+      color: var(--text-dark);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .main-wrapper {
+      background: #ffffff;
+      max-width: 1150px;
+      width: 100%;
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.08);
+
+      border: 1px solid rgba(226, 232, 240, 0.8);
+
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 40px 30px 20px 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .school-branding {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .univ-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: var(--bg-dark-slate);
+      text-transform: uppercase;
+    }
+
+    .univ-address {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .team-banner {
+      border-top: 2px dashed #e2e8f0;
+      padding-top: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* SEPTACODE LOGO AND TITLE */
+    .team-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .team-logo {
+      width: 110px;
+      height: 75px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .team-title {
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: var(--primary-accent);
+      letter-spacing: 1px;
+      text-align: left;
+    }
+
+    .team-slogan {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-dark);
+      font-weight: 600;
+      margin-top: 4px;
+      text-align: left;
+    }
+
+    .container {
+      padding: 30px 30px 40px 30px;
+      flex: 1;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 30px;
+      color: var(--bg-dark-slate);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .team-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .team-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      width: 100%;
+    }
+
+    .card {
+      background: #f8fafc;
+      border-radius: 16px;
+      width: 235px;
+      padding: 22px 18px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+
+      transition:
+        all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card:hover {
+      background: #ffffff;
+
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 15px 30px -10px
+        rgba(224, 109, 83, 0.2);
+
+      border-color:
+        rgba(224, 109, 83, 0.4);
+    }
+
+    .avatar-wrapper {
+      width: 95px;
+      height: 95px;
+
+      border-radius: 50%;
+
+      border: 3px solid var(--primary-accent);
+
+      padding: 3px;
+
+      margin-bottom: 12px;
+
+      background: #ffffff;
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+    }
+
+    .member-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bg-dark-slate);
+      margin-bottom: 4px;
+    }
+
+    .member-role {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-accent);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .member-bio {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .social-btn {
+      width: 32px;
+      height: 32px;
+
+      border-radius: 50%;
+
+      background-color: var(--primary-accent);
+
+      color: #ffffff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+
+      font-size: 0.8rem;
+
+      transition: all 0.2s ease;
+    }
+
+    /* SOCIAL BUTTON HOVER - KEPT */
+    .social-btn:hover {
+      background-color: var(--primary-hover);
+      transform: scale(1.1);
+    }
+
+    footer {
+      background-color: #f8fafc;
+
+      color: var(--text-muted);
+
+      text-align: center;
+
+      padding: 18px 20px;
+
+      font-size: 0.85rem;
+
+      font-weight: 600;
+
+      border-top: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 600px) {
+
+      .team-title-row {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .team-logo {
+        width: 120px;
+        height: 80px;
+      }
+
+      .team-title {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
+      .team-slogan {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-wrapper">
+
+    <header>
+
+      <div class="school-branding">
+
+        <div>
+
+          <div class="univ-name">
+            Pamantasan ng Lungsod ng Muntinlupa
+          </div>
+
+          <div class="univ-address">
+            University Road, Brgy. Poblacion,
+            Muntinlupa City, Metro Manila, Philippines
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="team-banner">
+
+        <div class="team-title-row">
+
+          <img
+            src="images/septacode-logo-cropped.png"
+            alt="SeptaCode Logo"
+            class="team-logo"
+          >
+
+          <div>
+
+            <div class="team-title">
+              SEPTACODE TEAM
+            </div>
+
+            <div class="team-slogan">
+              "Seven coders, one integrated system."
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <main class="container">
+
+      <h2 class="section-heading">
+        Meet Our Team
+      </h2>
+
+
+      <div class="team-grid">
+
+
+        <div class="team-row">
+
+          <div class="card">
+
+            <div class="avatar-wrapper">
+              <img
+                src="images/tine.png"
+                alt="Christine Joyce Espiritu">
+            </div>
+
+            <div class="member-name">
+              Christine Joyce Espiritu
+            </div>
+
+            <div class="member-role">
+              UI/UX Designer
+            </div>
+
+            <div class="member-bio">
+              Focuses on making clean, nice designs
+              so the web page looks easy and simple to use.
+            </div>
+
+            <div class="social-links">
+
+              <a
+                href="https://www.facebook.com/share/1cTmxhr4NX/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@lvswjh"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+
+              <a
+                href="mailto:christinejoyceespiritu@gmail.com"
+                class="social-btn">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="avatar-wrapper">
+              <img
+                src="images/jerwin.png"
+                alt="Jerwin Esparza">
+            </div>
+
+            <div class="member-name">
+              Jerwin Esparza
+            </div>
+
+            <div class="member-role">
+              Lead Developer
+            </div>
+
+            <div class="member-bio">
+              Likes solving logic problems and helping
+              the team finish code tasks on time.
+            </div>
+
+            <div class="social-links">
+
+              <a
+                href="https://www.facebook.com/pessimistic.jerwin"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@heinz_16?_r=1&_t=ZS-98lJFua12RA"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+
+              <a
+                href="mailto:jerwinesparza@gmail.com"
+                class="social-btn">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="avatar-wrapper">
+              <img
+                src="images/ven.png"
+                alt="Venice Canlas">
+            </div>
+
+            <div class="member-name">
+              Venice Canlas
+            </div>
+
+            <div class="member-role">
+              Project Manager / QA
+            </div>
+
+            <div class="member-bio">
+              Keeps the team organized and checks our
+              project to make sure there are no errors.
+            </div>
+
+            <div class="social-links">
+
+              <a
+                href="https://www.facebook.com/share/1D3js1SntK/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@venicechin_18?_r=1&_t=ZS-98lJF5eRjbW"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+
+              <a
+                href="mailto:venice18canlas@gmail.com"
+                class="social-btn">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="team-row">
+
+          <div class="card">
+
+            <div class="avatar-wrapper">
+              <img
+                src="images/bloom.png"
+                alt="Bloom Lynx Diaz">
+            </div>
+
+            <div class="member-name">
+              Bloom Lynx Diaz
+            </div>
+
+            <div class="member-role">
+              Frontend Developer
+            </div>
+
+            <div class="member-bio">
+              Creates active web layouts and builds nice
+              design elements on the screen.
+            </div>
+
+            <div class="social-links">
+
+              <a
+                href="https://www.facebook.com/diaz.abindan.lynx"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@gold15217"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+
+              <a
+                href="mailto:Bloomlynxdiaz@gmail.com"
+                class="social-btn">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="avatar-wrapper">
+              <img
+                src="images/elmer.png"
+                alt="Elmer Jeff Cornelio">
+            </div>
+
+            <div class="member-name">
+              Elmer Jeff Cornelio
+            </div>
+
+            <div class="member-role">
+              Backend & QA Specialist
+            </div>
+
+            <div class="member-bio">
+              Works on system logic, testing the code,
+              and fixing errors in the database.
+            </div>
+
+            <div class="social-links">
+
+              <a
+                href="https://www.facebook.com/share/19QqHHAiia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@jeffcornelio6?_r=1&_t=ZS-98lJF5eRjbW"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+
+              <a
+                href="mailto:jeffcornelio26@gmail.com"
+                class="social-btn">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="avatar-wrapper">
+              <img
+                src="images/mark.png"
+                alt="Eddie Mark Jarden">
+            </div>
+
+            <div class="member-name">
+              Eddie Mark Jarden
+            </div>
+
+            <div class="member-role">
+              Systems Analyst
+            </div>
+
+            <div class="member-bio">
+              A quiet and observant person who studies
+              project needs and plans system workflows.
+            </div>
+
+            <div class="social-links">
+
+              <a
+                href="https://www.facebook.com/markuhardinero?mibextid=ZbWKwL"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@markuhardinero_12?_r=1&_t=ZS-98lJF5eRjbW"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+
+              <a
+                href="mailto:jardenmark4@gmail.com"
+                class="social-btn">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="avatar-wrapper">
+              <img
+                src="images/eduard.png"
+                alt="Eduard Bagangan">
+            </div>
+
+            <div class="member-name">
+              Eduard Bagangan
+            </div>
+
+            <div class="member-role">
+              Integration Specialist
+            </div>
+
+            <div class="member-bio">
+              Helps connect different parts of the code
+              together into one complete system.
+            </div>
+
+            <div class="social-links">
+
+              <a
+                href="https://www.facebook.com/share/1GqTL3XPPJ/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@skullie_?_r=1&_t=ZS-98lXhEfFUCF"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+
+              <a
+                href="mailto:eduardzymone@gmail.com"
+                class="social-btn">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+    <footer>
+      All Rights Reserved 2026 - Integrative Programming
+    </footer>
+
+  </div>
+
+</body>
+</html>
